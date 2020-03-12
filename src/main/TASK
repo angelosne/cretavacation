@@ -1,0 +1,32 @@
+Καλημέρα. Για όποιον θέλει και έχει χρόνο να ασχοληθεί μέχρι την επόμενη Πέμπτη θα σας στείλω μια περιγραφή των οντοτήτων που θα χρησιμοποιήσουμε για το project του σεμιναρίου. Υπενθυμίζω πως το Project θα είναι μια απλή τουριστική εφαρμογή για εκδρομές στην Κρήτη.
+
+Με βάση την περιγραφή των οντοτήτων θα ήθελα να φτιάξετε ένα νέο Spring boot project (maven ή gradle) και να φτιάξετε τα entities, repositories και services. Αρχικά τα repositories και services δεν θα έχουν ορισμένη κάποια μέθοδο.
+
+Επίσης εφαρμόστε όπου κρίνετε απαραίτητο τα annotations OneToOne και OneToMany/ManyToOne που είδαμε χθες
+
+Η περιγραφή των οντοτήτων είναι:
+
+PERSON
+·        The users of our system. A person has the following attributes: id, name, surname and email
+·        The person name, surname and email can be strings of up to 30 characters each
+·        A person can view all tour packages and their information
+·        A person can rate one or more tour packages
+TOUR
+·        A tour has the following attributes: id, title, description, price, duration, keywords and region
+·        A tour can be contained in one or more tour packages
+·        The title can be a string of up to 80 characters
+·        The description can be a string of up to 300 characters
+·        The price is in EURO (€)
+·        The duration is an integer denoting the number of days
+·        Keywords is a string of up to 200 characters
+·        Region is an enumeration with the following values {Heraklion, Chania, Rethymno, Lassithi}
+TOUR PACKAGE
+·        A tour package has the following attributes: id, name
+·        The tour package name can be a string of up to 140 characters
+·        A tour package contains one or more tours
+RATING
+·        A rating has the following attributes: id, TourPackage, Person, score, comments
+·        A person rates a tour package with a specific score followed by a string of comments
+·        A person can only provide one rating for each tour package!
+·        The score is an integer (from 1 to 5)
+·        Comments is a string of up to 300 characters for the user to provide along with the rating
